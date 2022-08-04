@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
-    'node',
+    'graduateApp',
     'admin',
     'password',
     {
