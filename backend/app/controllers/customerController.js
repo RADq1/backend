@@ -1,6 +1,7 @@
 //importy
 const Employee = require('../model/employee');
 const Role = require('../model/role');
+const Student = require('../model/student');
 const sequelize = require('../model/database');
 const controller = {}
 
@@ -49,6 +50,22 @@ controller.createTables = async (req,res) => {
           address: 'Strzelecka x/y',
           phone: 'xyz123456',
           roleId: 3,
+        })
+        Student.create({
+          name: 'Damian',
+          surname: 'Smoliński',
+          email: '2000damian@gmail.com',
+          address: 'Strzelecka x/y',
+          phone: 'xyz123456',
+          password: "1",
+        })
+        Student.create({
+          name: 'Radosław',
+          surname: 'Gackowski',
+          email: '1998radq@gmail.com',
+          address: 'Strzelecka x/y',
+          phone: 'xyz123456',
+          password: "12345",
         })
         const data = Employee.findAll();
         return data;
