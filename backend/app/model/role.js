@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('./database');
 
 const Role = sequelize.define('role', {
-    role: Sequelize.STRING
+    role: Sequelize.STRING,
 },
 {
     //usuniecie createdAt, deletedAt z tabeli przy tworzeniu za pomoca sequelize

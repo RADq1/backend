@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 
 process.env.JWT_SECRET = "abcdefghijklmnouprz123"
 process.env.REFRESH_TOKEN_SECRET= "abcdefghijklmnouprz123"
+process.env.userWithEmail
 
 const authMiddleware = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1];
@@ -35,13 +36,18 @@ app.use((req, res, next) => {
 app.set('port', process.env.PORT || 8080);
 app.use(express.json());
 app.use('/employee', employeeRouters);
+//token
 app.use('/login', loginRoute);
+app.use('/refresh-token', loginRoute)
+app.use('/logout', loginRoute)
 app.use('/test', (req,res) => {
     res.send("Test route");
 })
+
 app.get('/student', authMiddleware, (req,res) => {
     res.send("Panel studenta");
 })
+
 app.use("/", (req, res)=>{
     res.send("Hello world from NodeJS Express");
 })

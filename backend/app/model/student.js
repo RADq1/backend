@@ -15,6 +15,7 @@ const Student = sequelize.define('student', {
     password: Sequelize.STRING,
     address: Sequelize.STRING,
     phone: Sequelize.BIGINT,
+    token: Sequelize.STRING,
     // token: {
     //     type: Sequelize.STRING,
     //     allowNull: true,
